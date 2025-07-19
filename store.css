@@ -14,6 +14,7 @@ body {
 a {
     text-decoration: none;
     cursor: pointer;
+    color: black;
 }
 
 /* Navbar  */
@@ -153,7 +154,7 @@ main {
 
 .body2-text p {
     margin-bottom: 1em; 
-    color: black;
+    color: rgb(85, 85, 85);
 }
 
 .body2-text p strong {
@@ -181,7 +182,7 @@ main {
     font-size: 17px;
     line-height: 1.7;
     margin: 30px auto;
-    color: black;
+    color: rgb(85, 85, 85);;
 }
 
 .body2-text2 strong {
@@ -192,11 +193,11 @@ main {
 }
 
 .body3 {
-    max-width: 1000px;
-    margin: 40px auto;
+    max-width: 1200px;
+    margin: 50px auto;
 }
 
-.body3 p {
+.body3> p {
     text-align: left;
     color: rgb(0, 0, 0);
     border-bottom: 1px solid rgb(207, 207, 207);
@@ -207,7 +208,55 @@ main {
 
 .body3-grid {
     display: grid;
-    padding: 15px 20px;
-    grid-template-columns: repeat(auto-fit, minmax(186px, 1fr));
-    gap: 10px;
+    padding: 15px 15px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card-image {
+    width: 100%;
+    height: 151px;
+}
+
+.card-image img {
+    height: inherit;
+    display: block;
+    object-fit: contain;
+}
+
+.card-content {
+    color: black;
+    padding: 20px 0;
+    font-size: 15px;
+}
+
+.card-content h3 {
+    padding: 8px 0;
+}
+
+.card-meta {
+    color: rgb(129, 129, 129);
+    font-size: 0.8em;
+    padding-top: 8px;
+}
+
+.body4 {
+    max-width: 1200px;
+    border-top: 1px solid rgb(207, 207, 207);
+    border-bottom: 1px solid rgb(207, 207, 207);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+    color: black;
+    margin-top: 80px;
+}
+
+.body4 img {
+    height: 50px;
+}
+
+.body4 p a {
+    text-decoration: underline;
+    text-decoration-thickness: 0.8px;
 }
