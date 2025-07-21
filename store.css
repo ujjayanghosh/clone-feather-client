@@ -101,7 +101,7 @@ nav {
 }
 
 .nav-cont-mobile {
-    position: absolute;
+    position: fixed;
     top: calc(100% + 15px);
     right: 0;
     width: 100vw;
