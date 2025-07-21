@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 * {
@@ -8,15 +7,24 @@
     box-sizing: border-box;
 }
 
+@keyframes panelSlideUp {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 body {
     background-color: black;
     box-sizing: border-box;
     font-family: sans-serif;
-overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 /* navbar */
-a{
+a {
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -24,58 +32,52 @@ a{
 }
 
 .nav {
-    width: 100%;
-    height: 104px;
+    /* Adjusted width to be responsive like other body sections */
+    width: min(1024px, 90%);
+    height: auto;
     display: flex;
     flex-direction: column;
-}
-
-.pad1 {
-    height: 60px;
-    width: 100vw;
+    margin: 50px auto;
 }
 
 .nav-cont {
-    width: min(1000px, 90%);
-    height: 40px;
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-}
-
-.pad2 {
-    height: 40px;
-    width: 350px;
-    /* flex-shrink: 0; */
+    /* Added default padding, will adjust in media queries */
+    padding: 0 40px;
 }
 
 .nav-cont-side {
     height: auto;
-    width: 424px;
+    width: 424px; /* Default width for desktop */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.desktop-nav{
-    display: flex; 
-    align-items: center; 
+.desktop-nav {
+    display: flex; /* Default on large screens */
+    align-items: center;
     gap: 30px;
 }
 
-.desktop-nav a{
+.desktop-nav a {
     color: white;
-    font-weight: 600; 
+    font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.8em; 
-    letter-spacing: 0.5px; 
-    white-space: nowrap; 
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
     transition: color 0.3s ease;
 }
 
 .desktop-nav a:hover {
     color: #dd3538;
+    transform: scale(1.2);
 }
 
 .desktop-nav a img {
@@ -83,13 +85,80 @@ a{
     width: auto;
 }
 
-.mobile-nav {
+#menu-toggle-checkbox {
     display: none;
+}
+
+.menu-toggle label {
+    display: block;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    z-index: 100;
+}
+
+.menu-toggle label img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.menu-toggle label img:nth-child(2) {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+/* Nav-cont-mobile for push-down effect (as per image provided) */
+.nav-cont-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Take full width of its container (.nav or nav-cont) */
+    background-color: hsl(0, 0%, 0%);
+    z-index: 90;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 10px 20px;
+
+    /* Properties for shifting content */
+    max-height: 0; /* Start with height 0 to hide it */
+    overflow: hidden; /* Hide content when collapsed */
+    visibility: hidden; /* Keep hidden for initial state */
+    opacity: 0; /* Keep for fade effect */
+
+    /* Transition properties */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.nav-cont-mobile a {
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}
+
+#menu-toggle-checkbox:checked ~ .nav-cont-mobile {
+    max-height: 500px; /* Expand to a height large enough to show all menu content */
+    visibility: visible;
+    opacity: 1;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-in-out, visibility 0s;
+}
+
+#menu-toggle-checkbox:checked + label img:nth-child(1) {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+#menu-toggle-checkbox:checked + label img:nth-child(2) {
+    opacity: 1;
+    transform: translate(0deg);
 }
 
 /* firstsection */
 .body-first {
-    width: min(1000px, 90%);
+    width: min(1024px, 90%); /* Adjusted max width to 1024px */
     min-height: 500px;
     margin: auto;
     padding: 40px 0;
@@ -121,7 +190,6 @@ a{
     font-size: 15px;
     width: clamp(250px, 80%, 300px);
     text-align: left;
-    animation: delay-fade 1s forwards;
     padding: 35px 0;
     color: white;
     animation: delay-fade 1s;
@@ -160,7 +228,6 @@ a{
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    
 }
 
 .windows svg, .arm svg {
@@ -181,7 +248,7 @@ a{
     justify-content: center;
 }
 
-.arm { 
+.arm {
     background-color: blue;
 }
 
@@ -205,7 +272,7 @@ a{
 
 /* second body */
 .body-second {
-    width: min(1000px, 90%);
+    width: min(1024px, 90%); /* Adjusted max width to 1024px */
     height: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -213,7 +280,6 @@ a{
     margin: auto;
     padding: 50px 0;
     box-sizing: border-box;
-
 }
 
 .second-box {
@@ -241,8 +307,9 @@ a{
 
 /* body-third */
 .body-third {
-    width: 1000px;
-    height: 500px;
+    /* Adjusted for full responsiveness */
+    width: min(1024px, 90%); /* Use flexible width */
+    height: auto; /* Allow height to adjust based on content */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -250,6 +317,7 @@ a{
     margin: auto;
     box-sizing: border-box;
     gap: 27px;
+    flex-wrap: wrap; /* Added for stacking on smaller screens */
 }
 .third-box1 {
     height: auto;
@@ -258,7 +326,7 @@ a{
     text-align: center;
 }
 
-.third-box1 h2{
+.third-box1 h2 {
     font-weight: 900;
     color: white;
     padding-bottom: 20px;
@@ -290,14 +358,13 @@ a{
 
 /* 4th body */
 .body-4th {
-    width: min(900px, 90%);
+    width: min(1024px, 90%); /* Adjusted max width to 1024px */
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
     padding: 50px 0;
-    /* text-align: center; */
 }
 
 .fth-box2 {
@@ -308,7 +375,7 @@ a{
     overflow: hidden;
     margin-bottom: 20px;
 }
-.image-cont img{
+.image-cont img {
     display: none;
     width: 100%;
     height: 100%;
@@ -349,7 +416,6 @@ a{
     width: 100%;
     text-align: center;
     padding-top: 20px;
-
 }
 
 .dot {
@@ -363,7 +429,8 @@ a{
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.dot.active { /* This class is also added/removed by JavaScript */
+.dot.active {
+    /* This class is also added/removed by JavaScript */
     background-color: #717171;
     transform: scale(1.2);
 }
@@ -399,171 +466,151 @@ a{
     gap: 15px;
 }
 
+/* ---------------------------------------------------------------------- */
+/* RESPONSIVE STYLES */
+/* ---------------------------------------------------------------------- */
+
+/* Breakpoint for screens up to 1024px (Tablets, smaller desktops) */
 @media (max-width: 1024px) {
-    .nav-cont,
-    .body-first,
-    .body-second,
-    .body-third,
-    .body-4th {
-        width: 95%;
-    }
-
-    .desktop-nav {
-        gap: 20px;
-    }
-
-    .pad2 {
-        width: clamp(50px, 20vw, 300px); 
-        height: 20px; 
-    }
-}
-
-@media (max-width: 1024px) {
-    .nav-cont,
-    .body-first,
-    .body-second,
-    .body-third,
-    .body-4th {
-        width: 95%;
-    }
-
-    .desktop-nav {
-        gap: 20px;
-    }
-
-    .pad2 {
-        width: clamp(50px, 20vw, 300px); 
-        height: 20px; 
-    }
-}
-
-/* Mobile specific adjustments */
-@media (max-width: 768px) {
-    .nav-cont {
-        flex-direction: column; 
-        height: auto;
-        padding-top: 20px;
-        gap: 15px; 
-    }
-
+    /* Navbar adjustments */
     .nav {
-        height: auto;
+        width: 90%; /* Allow nav to take more width on tablets */
+        margin: 30px auto; /* Adjust margin */
     }
-
-    .pad1 {
-        height: 20px; 
+    .nav-cont {
+        padding: 0 20px; /* Adjust main nav container padding */
     }
-
-    .pad2 {
-        display: none; /
-    }
-
     .nav-cont-side {
-        width: 100%;
-        justify-content: center;
+        width: auto; /* Allow width to be flexible, or 100% if desired */
+        justify-content: space-between; /* To control internal spacing if needed */
     }
 
     .desktop-nav {
-        flex-direction: column;
-        gap: 10px;
-        padding-bottom: 20px;
+        display: none; /* Hide desktop nav */
     }
 
-    .desktop-nav a {
-        font-size: 0.9em;
+    .menu-toggle {
+        display: block; /* Show mobile toggle */
     }
 
+    /* Adjust overall padding for main body sections */
+    .body-first,
+    .body-second,
+    .body-third,
+    .body-4th {
+        padding: 30px 20px; /* Adjust padding for tablets */
+        width: 90%; /* Ensure they are flexible */
+    }
+
+    /* Adjust widths for the columns in first section if they stack earlier */
+    .first-box1,
+    .first-homepage-png {
+        width: 100%; /* Allow these to take full width on tablets if they start stacking */
+    }
+
+    /* Third section specific adjustments */
+    .third-box1,
+    .third-box2 {
+        width: 100%; /* Ensure full width on tablets if stacking */
+    }
+    .third-box1 h2 {
+        font-size: clamp(1.6em, 5vw, 2.2em); /* Adjust heading size */
+    }
+}
+
+/* Breakpoint for Mobile View (screens up to 768px - typical phones) */
+@media (max-width: 768px) {
+    /* Navbar adjustments */
+    .nav {
+        margin: 20px auto; /* Reduce top margin */
+        width: 95%; /* Give more space to nav on very small screens */
+    }
+    .nav-cont {
+        padding: 0 10px; /* Reduce horizontal padding */
+    }
+    .nav-cont-side {
+        width: 100%; /* Ensure full width for side content */
+    }
+
+    /* First section adjustments */
     .body-first {
-        flex-direction: column;
+        flex-direction: column; /* Ensure items stack */
         padding: 20px 0;
-        gap: 30px;
+        gap: 20px;
     }
-
-    .first-box1, .first-homepage-png {
-        width: 90%;
+    .first-box1 {
+        width: 100%; /* Full width for text/SVG box */
     }
-
+    .first-homepage-png {
+        width: 100%; /* Full width for image */
+        height: clamp(200px, 60vw, 350px); /* Adjust image height for smaller screens */
+    }
     .first-check-list {
         width: 90%;
-        padding: 20px 0;
+        font-size: 14px;
+        padding: 15px 0;
     }
-
     .first-btn {
         flex-direction: column;
         gap: 10px;
-        max-width: 300px;
+        max-width: 280px; /* Smaller max-width for buttons */
     }
-
-    .windows, .arm {
+    .windows,
+    .arm {
         width: 100%;
+        height: 45px; /* Slightly smaller button height */
         font-size: 16px;
     }
 
+    /* Second section (already uses grid auto-fit, so good, but adjust padding) */
     .body-second {
-        padding: 30px 0;
+        padding: 20px 10px; /* Add some horizontal padding */
     }
-
     .second-box {
-        align-items: center;
-        text-align: center;
+        align-items: flex-start; /* Keep original alignment, or center if desired */
+        text-align: left; /* Keep original alignment, or center if desired */
     }
 
+    /* Third section */
     .body-third {
-        flex-direction: column;
-        padding: 30px 0;
-        gap: 30px;
+        flex-direction: column; /* Ensure stacking */
+        padding: 20px 10px; /* Adjust padding */
+        gap: 20px;
     }
-
-    .third-box1, .third-box2 {
-        width: 90%;
+    .third-box1,
+    .third-box2 {
+        width: 100%; /* Full width for boxes */
     }
-
     .third-box1 h2 {
-        font-size: clamp(1.5em, 6vw, 2.2em);
-        padding-bottom: 15px;
+        font-size: clamp(1.4em, 8vw, 2em); /* Adjust for smaller screens */
+        padding-bottom: 10px;
     }
-
     .third-box1 p {
-        font-size: clamp(0.85em, 3vw, 0.95em);
+        font-size: clamp(0.8em, 3.5vw, 0.9em); /* Adjust for smaller screens */
     }
 
+    /* Fourth section (carousel already uses percentages) */
     .body-4th {
-        padding: 30px 0;
+        padding: 20px 10px;
+    }
+    .fth-box2 {
+        height: clamp(250px, 60vw, 400px); /* Adjust carousel height */
+    }
+    .arrow {
+        padding: 8px 12px; /* Smaller arrows */
+        font-size: 20px;
     }
 
+    /* Fifth section */
     .body-5th {
         padding: 30px 15px;
-        gap: 15px;
     }
-
     .fifth-text {
-        font-size: clamp(30px, 8vw, 45px);
+        font-size: clamp(25px, 7vw, 40px); /* Adjust for smaller screens */
+        max-width: 90%;
     }
-
     .fifth-btn {
         flex-direction: column;
-        gap: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-cont,
-    .body-first,
-    .body-second,
-    .body-third,
-    .body-4th,
-    .body-5th {
-        width: 98%;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .desktop-nav a {
-        font-size: 0.75em;
-    }
-
-    .first-box1, .first-homepage-png,
-    .third-box1, .third-box2 {
-        width: 95%;
+        max-width: 300px;
     }
 }

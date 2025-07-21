@@ -59,7 +59,6 @@
 
 <body>
     <div class="nav">
-        <div class="pad1"></div>
         <div class="nav-cont">
             <div class="logo">
                 <a href="index.html">
@@ -81,7 +80,6 @@
                     </svg>
                 </a>
             </div>
-            <div class="pad2"></div>
             <div class="nav-cont-side">
                 <div class="desktop-nav">
                     <a href="#">Features</a>
@@ -93,17 +91,28 @@
                             style="filter: invert(100%);"> &nbsp; Discord
                     </a>
                 </div>
-
-                <div class="mobile-nav">
-                    <a href="#">Features</a>
-                    <a href="#">Screenshots</a>
-                    <a href="#">Store</a>
-                    <a href="#">News</a>
-                    <a href="#">
-                        <img src="asset/discord-svgrepo-com.svg" alt="" height="20px" width="20px"
-                            style="filter: invert(100%);"> &nbsp; Discord
-                    </a>
+                <div class="menu-toggle-mobile">
+                    <div class="menu-toggle">
+                        <input type="checkbox" id="menu-toggle-checkbox">
+                        <label for="menu-toggle-checkbox">
+                            <img src="asset/menu_24dp_FFFFFF_FILL0_wght700_GRAD0_opsz24.png" alt=""
+                                class="menu-icon-opem">
+                            <img src="asset/close_24dp_FFFFFF_FILL0_wght700_GRAD0_opsz24.png" alt=""
+                                class="menu-icon-close">
+                        </label>
+                        <div class="nav-cont-mobile">
+                            <a href="#">Features</a>
+                            <a href="#">Screenshots</a>
+                            <a href="#">Store</a>
+                            <a href="#">News</a>
+                            <a href="#">
+                                <img src="asset/discord-svgrepo-com.svg" alt="" height="20px" width="20px"
+                                    style="filter: invert(100%);"> &nbsp; Discord
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
         <img src="asset/gr1.svg" alt="" class="animate-left">
@@ -213,36 +222,36 @@
                 <button class="right-arrow arrow">&#10095;</button>
             </div>
         </div>
-            <div class="dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
     </div>
 
     <div class="body-5th">
-        <div class="fifth-text">UP YOUR  GAME</div>
+        <div class="fifth-text">UP YOUR GAME</div>
         <div class="fifth-btn">
             <button class="windows btn"><a href="asset/Feather Launcher Setup 2.3.8.exe">
-                        Download for &nbsp;
-                        <svg class="size-m" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <title>Windows Logo</title>
-                            <path fill="currentColor"
-                                d="M0 0v11.408h11.408V0zm12.594 0v11.408H24V0zM0 12.594V24h11.408V12.594zm12.594 0V24H24V12.594z">
-                            </path>
-                        </svg>
-                    </a></button>
-                <button class="arm btn"><a href="asset/Feather Launcher Setup 2.3.8.exe">
-                        Download for
-                        <svg style="width: 20px; height: 20px; margin-left: 16px" fill="currentcolor"
-                            viewBox="0 0 512 476" xmlns="http://www.w3.org/2000/svg" {...props}="">
-                            <path fill="currentcolor"
-                                d="m72 292.4395142h-36v-36h36zm36.9295654-72.9296265h-36.9295654v36.9296265h36.9295654zm36.9296265-36.9295654h-36.9296265v36.9295654h36.9296265zm36.9295654-36.9295655h-36.9295654v36.9295654h36.9295654zm36-36.2574691h-36v36.2574692h36zm37.1346436-72.8280411h-37.1346436v72.8280411h37.1346436zm37.2692871-36.5652466h-37.2692871v36h37.2692871zm0 72h36.0442505v-35.2857056h-36.0442505zm36.0442505 37.3932877h36.4812622v-36.9443741h-36.4812622zm36.4812622 36.6146164h37.1425171v-36.6146164h-37.1425171zm37.1425171 35.6428527h36.29953v-35.6428528h-36.29953zm73.5429077.4488526h-37.2433777v73.7908936h37.2433777zm-220.4802246-72.7063217v36.7222519h36.6399536v-36.7222519zm36.6399536 36.7222519v36.9295654h36.673584v-36.9295654zm73.1548462 72.9295654v-36h-36.4812622v36zm-72.7874146 146.6635742h36.3061523v-36h-36.3061523zm-109.7509765 110.1085815h-36.9428711v35.8370972h73.9933472v-35.8370972h35.8534241v-36.7028809-36.7028808h36.8470764v-36.7028198h-36.8470764v36.7028198h-36.8109436l-.1081543 36.7028809h-35.8173829v36.7028809m-73.670105-.0000001h36.5598145v-36.7028809h-36.5598145zm-36.467041-73.4057617v36.7028809h36.467041v-36.7028809zm-37.210083-36.7028198v36.7028198h37.210083v-36.7028198zm0-73.269165h-36v73.269104h36zm366.8607178-73.020813h-37.1425171v73.494873h-36.4812622v36h36.4812622v-35.8684692h73.4420471v-37h-36.29953z">
-                            </path>
-                        </svg>
-                    </a></button>
+                    Download for &nbsp;
+                    <svg class="size-m" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Windows Logo</title>
+                        <path fill="currentColor"
+                            d="M0 0v11.408h11.408V0zm12.594 0v11.408H24V0zM0 12.594V24h11.408V12.594zm12.594 0V24H24V12.594z">
+                        </path>
+                    </svg>
+                </a></button>
+            <button class="arm btn"><a href="asset/Feather Launcher Setup 2.3.8.exe">
+                    Download for
+                    <svg style="width: 20px; height: 20px; margin-left: 16px" fill="currentcolor" viewBox="0 0 512 476"
+                        xmlns="http://www.w3.org/2000/svg" {...props}="">
+                        <path fill="currentcolor"
+                            d="m72 292.4395142h-36v-36h36zm36.9295654-72.9296265h-36.9295654v36.9296265h36.9295654zm36.9296265-36.9295654h-36.9296265v36.9295654h36.9296265zm36.9295654-36.9295655h-36.9295654v36.9295654h36.9295654zm36-36.2574691h-36v36.2574692h36zm37.1346436-72.8280411h-37.1346436v72.8280411h37.1346436zm37.2692871-36.5652466h-37.2692871v36h37.2692871zm0 72h36.0442505v-35.2857056h-36.0442505zm36.0442505 37.3932877h36.4812622v-36.9443741h-36.4812622zm36.4812622 36.6146164h37.1425171v-36.6146164h-37.1425171zm37.1425171 35.6428527h36.29953v-35.6428528h-36.29953zm73.5429077.4488526h-37.2433777v73.7908936h37.2433777zm-220.4802246-72.7063217v36.7222519h36.6399536v-36.7222519zm36.6399536 36.7222519v36.9295654h36.673584v-36.9295654zm73.1548462 72.9295654v-36h-36.4812622v36zm-72.7874146 146.6635742h36.3061523v-36h-36.3061523zm-109.7509765 110.1085815h-36.9428711v35.8370972h73.9933472v-35.8370972h35.8534241v-36.7028809-36.7028808h36.8470764v-36.7028198h-36.8470764v36.7028198h-36.8109436l-.1081543 36.7028809h-35.8173829v36.7028809m-73.670105-.0000001h36.5598145v-36.7028809h-36.5598145zm-36.467041-73.4057617v36.7028809h36.467041v-36.7028809zm-37.210083-36.7028198v36.7028198h37.210083v-36.7028198zm0-73.269165h-36v73.269104h36zm366.8607178-73.020813h-37.1425171v73.494873h-36.4812622v36h36.4812622v-35.8684692h73.4420471v-37h-36.29953z">
+                        </path>
+                    </svg>
+                </a></button>
         </div>
     </div>
 </body>
